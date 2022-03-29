@@ -30,7 +30,10 @@ class RootContainer {
     }
     
     func makeInitalScreen() -> UIViewController {
-        return UINavigationController(rootViewController: makeMainPageVC())
+        let nc = UINavigationController(rootViewController: makeMainPageVC())
+        nc.isNavigationBarHidden = true
+        nc.navigationBar.tintColor = .black
+        return nc
     }
     
 }

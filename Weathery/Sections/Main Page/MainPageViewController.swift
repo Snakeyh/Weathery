@@ -109,8 +109,17 @@ class MainPageViewController: NiblessViewController {
             self?.updateForNewState(state: state)
         }
     }
-
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     private func setupViews() {
         view.addSubview(cityTextField)
         view.addSubview(divider)
